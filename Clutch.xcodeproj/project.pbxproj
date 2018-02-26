@@ -14,6 +14,11 @@
 		843E5204204326DB00E43F59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E5203204326DB00E43F59 /* main.m */; };
 		843E520F204326DB00E43F59 /* ClutchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E520E204326DB00E43F59 /* ClutchTests.m */; };
 		843E521A204326DC00E43F59 /* ClutchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E5219204326DC00E43F59 /* ClutchUITests.m */; };
+		843E522920432B2000E43F59 /* clutch.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E522820432B2000E43F59 /* clutch.m */; };
+		843E52F0204360C900E43F59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E52EF204360C900E43F59 /* AppDelegate.m */; };
+		843E52F2204360C900E43F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843E52F1204360C900E43F59 /* Assets.xcassets */; };
+		843E52F5204360C900E43F59 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843E52F3204360C900E43F59 /* MainMenu.xib */; };
+		843E52F8204360C900E43F59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E52F7204360C900E43F59 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,16 @@
 		843E5215204326DC00E43F59 /* ClutchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClutchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843E5219204326DC00E43F59 /* ClutchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchUITests.m; sourceTree = "<group>"; };
 		843E521B204326DC00E43F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843E522720432B2000E43F59 /* clutch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clutch.h; sourceTree = "<group>"; };
+		843E522820432B2000E43F59 /* clutch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clutch.m; sourceTree = "<group>"; };
+		843E52EC204360C800E43F59 /* ClutchAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClutchAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		843E52EE204360C800E43F59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		843E52EF204360C900E43F59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		843E52F1204360C900E43F59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		843E52F4204360C900E43F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		843E52F6204360C900E43F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843E52F7204360C900E43F59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		843E52F9204360C900E43F59 /* ClutchAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClutchAgent.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,16 +89,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		843E52E9204360C800E43F59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		843E51EB204326DB00E43F59 = {
 			isa = PBXGroup;
 			children = (
+				843E529F204355A700E43F59 /* clutch-core */,
 				843E51F6204326DB00E43F59 /* Clutch */,
+				843E52ED204360C800E43F59 /* ClutchAgent */,
 				843E520D204326DB00E43F59 /* ClutchTests */,
 				843E5218204326DC00E43F59 /* ClutchUITests */,
 				843E51F5204326DB00E43F59 /* Products */,
+				843E52FD204364F400E43F59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +118,7 @@
 				843E51F4204326DB00E43F59 /* Clutch.app */,
 				843E520A204326DB00E43F59 /* ClutchTests.xctest */,
 				843E5215204326DC00E43F59 /* ClutchUITests.xctest */,
+				843E52EC204360C800E43F59 /* ClutchAgent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +155,36 @@
 				843E521B204326DC00E43F59 /* Info.plist */,
 			);
 			path = ClutchUITests;
+			sourceTree = "<group>";
+		};
+		843E529F204355A700E43F59 /* clutch-core */ = {
+			isa = PBXGroup;
+			children = (
+				843E522720432B2000E43F59 /* clutch.h */,
+				843E522820432B2000E43F59 /* clutch.m */,
+			);
+			path = "clutch-core";
+			sourceTree = "<group>";
+		};
+		843E52ED204360C800E43F59 /* ClutchAgent */ = {
+			isa = PBXGroup;
+			children = (
+				843E52EE204360C800E43F59 /* AppDelegate.h */,
+				843E52EF204360C900E43F59 /* AppDelegate.m */,
+				843E52F1204360C900E43F59 /* Assets.xcassets */,
+				843E52F3204360C900E43F59 /* MainMenu.xib */,
+				843E52F6204360C900E43F59 /* Info.plist */,
+				843E52F7204360C900E43F59 /* main.m */,
+				843E52F9204360C900E43F59 /* ClutchAgent.entitlements */,
+			);
+			path = ClutchAgent;
+			sourceTree = "<group>";
+		};
+		843E52FD204364F400E43F59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +243,23 @@
 			productReference = 843E5215204326DC00E43F59 /* ClutchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		843E52EB204360C800E43F59 /* ClutchAgent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843E52FA204360C900E43F59 /* Build configuration list for PBXNativeTarget "ClutchAgent" */;
+			buildPhases = (
+				843E52E8204360C800E43F59 /* Sources */,
+				843E52E9204360C800E43F59 /* Frameworks */,
+				843E52EA204360C800E43F59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClutchAgent;
+			productName = ClutchAgent;
+			productReference = 843E52EC204360C800E43F59 /* ClutchAgent.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,6 +283,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 843E51F3204326DB00E43F59;
 					};
+					843E52EB204360C800E43F59 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 843E51EF204326DB00E43F59 /* Build configuration list for PBXProject "Clutch" */;
@@ -226,6 +303,7 @@
 			projectRoot = "";
 			targets = (
 				843E51F3204326DB00E43F59 /* Clutch */,
+				843E52EB204360C800E43F59 /* ClutchAgent */,
 				843E5209204326DB00E43F59 /* ClutchTests */,
 				843E5214204326DC00E43F59 /* ClutchUITests */,
 			);
@@ -256,6 +334,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		843E52EA204360C800E43F59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843E52F2204360C900E43F59 /* Assets.xcassets in Resources */,
+				843E52F5204360C900E43F59 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843E522920432B2000E43F59 /* clutch.m in Sources */,
 				843E51FC204326DB00E43F59 /* ViewController.m in Sources */,
 				843E5204204326DB00E43F59 /* main.m in Sources */,
 				843E51F9204326DB00E43F59 /* AppDelegate.m in Sources */,
@@ -282,6 +370,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				843E521A204326DC00E43F59 /* ClutchUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843E52E8204360C800E43F59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843E52F8204360C900E43F59 /* main.m in Sources */,
+				843E52F0204360C900E43F59 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +404,14 @@
 				843E5200204326DB00E43F59 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		843E52F3204360C900E43F59 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				843E52F4204360C900E43F59 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -497,6 +602,34 @@
 			};
 			name = Release;
 		};
+		843E52FB204360C900E43F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClutchAgent/ClutchAgent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ClutchAgent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rcx.ClutchAgent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		843E52FC204360C900E43F59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClutchAgent/ClutchAgent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ClutchAgent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rcx.ClutchAgent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -532,6 +665,15 @@
 			buildConfigurations = (
 				843E5225204326DC00E43F59 /* Debug */,
 				843E5226204326DC00E43F59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843E52FA204360C900E43F59 /* Build configuration list for PBXNativeTarget "ClutchAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843E52FB204360C900E43F59 /* Debug */,
+				843E52FC204360C900E43F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
