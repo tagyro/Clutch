@@ -10,16 +10,21 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="barMenu" destination="bna-To-KhK" id="TSE-Ev-SaL"/>
+                <outlet property="bindAddressItem" destination="VEi-TH-bDk" id="Ip0-TM-239"/>
+                <outlet property="statusItem" destination="t38-0h-qSz" id="Byq-aD-4HV"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="bna-To-KhK">
             <items>
-                <menuItem title="Status: Running" enabled="NO" id="t38-0h-qSz">
+                <menuItem title="Binding to utun3" enabled="NO" id="t38-0h-qSz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Bind Address: 127.0.0.1" enabled="NO" id="VEi-TH-bDk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="7ct-lg-o0F"/>
@@ -27,6 +32,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openClutch:" target="Voe-Tx-rLC" id="iCg-bS-1I3"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Open Transmission" id="fQd-5c-SQI">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openTransmission:" target="Voe-Tx-rLC" id="5f2-oz-HBt"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="bwn-nx-hDT"/>
@@ -37,6 +48,9 @@
                     </connections>
                 </menuItem>
             </items>
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="8dO-co-yXV"/>
+            </connections>
             <point key="canvasLocation" x="157" y="-81"/>
         </menu>
     </objects>

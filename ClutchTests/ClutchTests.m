@@ -3,7 +3,7 @@
 //  ClutchTests
 //
 //  Created by Harrison White on 2/25/18.
-//  Copyright © 2018 RCX LLC. All rights reserved.
+//  Copyright © 2018 Harrison White. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

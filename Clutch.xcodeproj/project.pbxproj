@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8433E862204616B100EC32F4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8433E861204616B100EC32F4 /* Credits.rtf */; };
+		8433E86420461BCC00EC32F4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8433E86320461BCC00EC32F4 /* LICENSE */; };
+		843BD19420460D2300BA999D /* ClutchAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 843E52EC204360C800E43F59 /* ClutchAgent.app */; };
 		843E51F9204326DB00E43F59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E51F8204326DB00E43F59 /* AppDelegate.m */; };
 		843E51FC204326DB00E43F59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E51FB204326DB00E43F59 /* ViewController.m */; };
 		843E51FE204326DB00E43F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843E51FD204326DB00E43F59 /* Assets.xcassets */; };
@@ -14,14 +17,22 @@
 		843E5204204326DB00E43F59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E5203204326DB00E43F59 /* main.m */; };
 		843E520F204326DB00E43F59 /* ClutchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E520E204326DB00E43F59 /* ClutchTests.m */; };
 		843E521A204326DC00E43F59 /* ClutchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E5219204326DC00E43F59 /* ClutchUITests.m */; };
-		843E522920432B2000E43F59 /* clutch.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E522820432B2000E43F59 /* clutch.m */; };
+		843E522920432B2000E43F59 /* Clutch.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E522820432B2000E43F59 /* Clutch.m */; };
 		843E52F0204360C900E43F59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E52EF204360C900E43F59 /* AppDelegate.m */; };
 		843E52F2204360C900E43F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843E52F1204360C900E43F59 /* Assets.xcassets */; };
 		843E52F5204360C900E43F59 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843E52F3204360C900E43F59 /* MainMenu.xib */; };
 		843E52F8204360C900E43F59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E52F7204360C900E43F59 /* main.m */; };
+		84BD785D2043F47200D6EAC9 /* Clutch.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E522820432B2000E43F59 /* Clutch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		843BD19520460D2E00BA999D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843E51EC204326DB00E43F59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 843E52EB204360C800E43F59;
+			remoteInfo = ClutchAgent;
+		};
 		843E520B204326DB00E43F59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 843E51EC204326DB00E43F59 /* Project object */;
@@ -38,7 +49,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		843BD19020460BD500BA999D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "$(TARGET_BUILD_DIR)/Clutch.app/Contents/Library/LoginItems";
+			dstSubfolderSpec = 0;
+			files = (
+				843BD19420460D2300BA999D /* ClutchAgent.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8433E861204616B100EC32F4 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		8433E86320461BCC00EC32F4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		843E51F4204326DB00E43F59 /* Clutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843E51F7204326DB00E43F59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		843E51F8204326DB00E43F59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,15 +74,14 @@
 		843E5200204326DB00E43F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843E5202204326DB00E43F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843E5203204326DB00E43F59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		843E5205204326DB00E43F59 /* Clutch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clutch.entitlements; sourceTree = "<group>"; };
 		843E520A204326DB00E43F59 /* ClutchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClutchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843E520E204326DB00E43F59 /* ClutchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchTests.m; sourceTree = "<group>"; };
 		843E5210204326DB00E43F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843E5215204326DC00E43F59 /* ClutchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClutchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843E5219204326DC00E43F59 /* ClutchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchUITests.m; sourceTree = "<group>"; };
 		843E521B204326DC00E43F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		843E522720432B2000E43F59 /* clutch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clutch.h; sourceTree = "<group>"; };
-		843E522820432B2000E43F59 /* clutch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clutch.m; sourceTree = "<group>"; };
+		843E522720432B2000E43F59 /* Clutch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clutch.h; sourceTree = "<group>"; };
+		843E522820432B2000E43F59 /* Clutch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Clutch.m; sourceTree = "<group>"; };
 		843E52EC204360C800E43F59 /* ClutchAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClutchAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843E52EE204360C800E43F59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		843E52EF204360C900E43F59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,7 +89,6 @@
 		843E52F4204360C900E43F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		843E52F6204360C900E43F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843E52F7204360C900E43F59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		843E52F9204360C900E43F59 /* ClutchAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClutchAgent.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +126,7 @@
 		843E51EB204326DB00E43F59 = {
 			isa = PBXGroup;
 			children = (
+				8433E86320461BCC00EC32F4 /* LICENSE */,
 				843E529F204355A700E43F59 /* clutch-core */,
 				843E51F6204326DB00E43F59 /* Clutch */,
 				843E52ED204360C800E43F59 /* ClutchAgent */,
@@ -134,7 +159,7 @@
 				843E51FF204326DB00E43F59 /* Main.storyboard */,
 				843E5202204326DB00E43F59 /* Info.plist */,
 				843E5203204326DB00E43F59 /* main.m */,
-				843E5205204326DB00E43F59 /* Clutch.entitlements */,
+				8433E861204616B100EC32F4 /* Credits.rtf */,
 			);
 			path = Clutch;
 			sourceTree = "<group>";
@@ -160,8 +185,8 @@
 		843E529F204355A700E43F59 /* clutch-core */ = {
 			isa = PBXGroup;
 			children = (
-				843E522720432B2000E43F59 /* clutch.h */,
-				843E522820432B2000E43F59 /* clutch.m */,
+				843E522720432B2000E43F59 /* Clutch.h */,
+				843E522820432B2000E43F59 /* Clutch.m */,
 			);
 			path = "clutch-core";
 			sourceTree = "<group>";
@@ -175,7 +200,6 @@
 				843E52F3204360C900E43F59 /* MainMenu.xib */,
 				843E52F6204360C900E43F59 /* Info.plist */,
 				843E52F7204360C900E43F59 /* main.m */,
-				843E52F9204360C900E43F59 /* ClutchAgent.entitlements */,
 			);
 			path = ClutchAgent;
 			sourceTree = "<group>";
@@ -197,10 +221,12 @@
 				843E51F0204326DB00E43F59 /* Sources */,
 				843E51F1204326DB00E43F59 /* Frameworks */,
 				843E51F2204326DB00E43F59 /* Resources */,
+				843BD19020460BD500BA999D /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				843BD19620460D2E00BA999D /* PBXTargetDependency */,
 			);
 			name = Clutch;
 			productName = Clutch;
@@ -272,6 +298,14 @@
 					843E51F3204326DB00E43F59 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					843E5209204326DB00E43F59 = {
 						CreatedOnToolsVersion = 9.2;
@@ -286,6 +320,14 @@
 					843E52EB204360C800E43F59 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -316,6 +358,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				843E51FE204326DB00E43F59 /* Assets.xcassets in Resources */,
+				8433E862204616B100EC32F4 /* Credits.rtf in Resources */,
+				8433E86420461BCC00EC32F4 /* LICENSE in Resources */,
 				843E5201204326DB00E43F59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843E522920432B2000E43F59 /* clutch.m in Sources */,
+				843E522920432B2000E43F59 /* Clutch.m in Sources */,
 				843E51FC204326DB00E43F59 /* ViewController.m in Sources */,
 				843E5204204326DB00E43F59 /* main.m in Sources */,
 				843E51F9204326DB00E43F59 /* AppDelegate.m in Sources */,
@@ -377,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BD785D2043F47200D6EAC9 /* Clutch.m in Sources */,
 				843E52F8204360C900E43F59 /* main.m in Sources */,
 				843E52F0204360C900E43F59 /* AppDelegate.m in Sources */,
 			);
@@ -385,6 +430,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		843BD19620460D2E00BA999D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 843E52EB204360C800E43F59 /* ClutchAgent */;
+			targetProxy = 843BD19520460D2E00BA999D /* PBXContainerItemProxy */;
+		};
 		843E520C204326DB00E43F59 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 843E51F3204326DB00E43F59 /* Clutch */;
@@ -524,13 +574,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Clutch/Clutch.entitlements;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Clutch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcx.Clutch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -538,13 +590,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Clutch/Clutch.entitlements;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Clutch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcx.Clutch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -606,13 +660,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ClutchAgent/ClutchAgent.entitlements;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ClutchAgent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcx.ClutchAgent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -620,13 +676,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ClutchAgent/ClutchAgent.entitlements;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ClutchAgent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcx.ClutchAgent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
