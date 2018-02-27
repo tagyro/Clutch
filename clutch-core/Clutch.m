@@ -48,16 +48,21 @@
 #include <unistd.h>
 #include <string.h>
 
-NSString* kGroupPreferencesID           = @"8TSRGQJRTM.group.com.rcx.clutch";
-NSString* kTransmissionBundleID    = @"org.m0k.transmission";
+// You need to DISABLE the App Sandbox in "capabilities" in the Xcode project before things
+// like editing other apps' preferences, killing other processes, etc. will function properly
 
-NSString* kBindInterfaceKey             = @"BindInterface";
+NSString* kGroupPreferencesID       = @"8TSRGQJRTM.group.com.rcx.clutch";
+NSString* kTransmissionBundleID     = @"org.m0k.transmission";
+
+NSString* kBindInterfaceKey         = @"BindInterface";
 
 // NSRunningApplication -isTerminated
 NSString* kAppTerminatedKeyPath     = @"isTerminated";
 
-NSString* kBindAddressIPv4Key = @"BindAddressIPv4";
-NSString* kBindAddressIPv6Key = @"BindAddressIPv6";
+NSString* kBindAddressIPv4Key       = @"BindAddressIPv4";
+NSString* kBindAddressIPv6Key       = @"BindAddressIPv6";
+
+static void *kAppTerminatedContext  = &kAppTerminatedContext;
 
 @implementation ClutchInterface
 
@@ -82,6 +87,8 @@ NSString* kBindAddressIPv6Key = @"BindAddressIPv6";
 
 @interface Clutch ()
 
+@property (nonatomic, strong) NSUserDefaults* transmissionDefaults;
+
 // this must be retained here so we can observe when it is terminated
 // otherwise, ARC will release it while a key-value observer is registered and crash the app
 @property (nonatomic, strong) NSMutableArray<NSRunningApplication *>* transmissionInstances;
@@ -93,35 +100,16 @@ NSString* kBindAddressIPv6Key = @"BindAddressIPv6";
 - (id)init {
     self = [super init];
     if (self) {
+        _clutchGroupDefaults = [[NSUserDefaults alloc]initWithSuiteName:kGroupPreferencesID];
+        _transmissionDefaults = [[NSUserDefaults alloc]initWithSuiteName:kTransmissionBundleID];
+        
         _transmissionInstances = [[NSMutableArray alloc]init];
     }
     return self;
 }
 
-- (NSUserDefaults *)clutchGroupDefaults {
-    static NSUserDefaults* clutchGroupDefaults = nil;
-    if (!clutchGroupDefaults) {
-        clutchGroupDefaults = [[NSUserDefaults alloc]initWithSuiteName:kGroupPreferencesID];
-    }
-    
-     // NSLog(@"accessing clutch defaults:\n%@", [[clutchGroupDefaults dictionaryRepresentation]allKeys]);
-    
-    return clutchGroupDefaults;
-}
-
-- (NSUserDefaults *)transmissionDefaults {
-    static NSUserDefaults* transmissionDefaults = nil;
-    if (!transmissionDefaults) {
-        transmissionDefaults = [[NSUserDefaults alloc]initWithSuiteName:kTransmissionBundleID];
-    }
-    
-    // NSLog(@"accessing transmission defaults:\n%@", [[transmissionDefaults dictionaryRepresentation]allKeys]);
-    
-    return transmissionDefaults;
-}
-
 - (ClutchInterface *)getBindInterface {
-    NSData *data = [[self clutchGroupDefaults]objectForKey:kBindInterfaceKey];
+    NSData *data = [_clutchGroupDefaults objectForKey:kBindInterfaceKey];
     return data ? [NSKeyedUnarchiver unarchiveObjectWithData:data] : nil;
 }
 
@@ -131,15 +119,11 @@ NSString* kBindAddressIPv6Key = @"BindAddressIPv6";
     [transmissionDefaults removeObjectForKey:kBindAddressIPv6Key];
     [transmissionDefaults synchronize];
     
-    NSUserDefaults* defaults = [self clutchGroupDefaults];
-    [defaults removeObjectForKey:kBindInterfaceKey];
-    [defaults synchronize];
+    [_clutchGroupDefaults removeObjectForKey:kBindInterfaceKey];
+    [_clutchGroupDefaults synchronize];
     
     return [self restartTransmission];
 }
-
-#warning I HAVE THE SOLUTION!! You need to DISABLE the App Sandbox in "capabilities" in the Xcode project
-#warning this doesn't automatically work on either my desktop OR my laptop
 
 - (BOOL)bindToInterface:(ClutchInterface *)interface {
     NSUserDefaults* transmissionDefaults = [self transmissionDefaults];
@@ -153,9 +137,8 @@ NSString* kBindAddressIPv6Key = @"BindAddressIPv6";
     }
     [transmissionDefaults synchronize];
     
-    NSUserDefaults* defaults = [self clutchGroupDefaults];
-    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:interface] forKey:kBindInterfaceKey];
-    [defaults synchronize];
+    [_clutchGroupDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:interface] forKey:kBindInterfaceKey];
+    [_clutchGroupDefaults synchronize];
     
     return [self restartTransmission];
 }
@@ -200,9 +183,6 @@ NSString* kBindAddressIPv6Key = @"BindAddressIPv6";
     return [self bindToInterface:bindInterface];
 }
 
-static void *kAppTerminatedContext = &kAppTerminatedContext;
-
-#warning on some systems the sandbox prevents this from running! why does this work on my desktop and not my laptop...
 - (BOOL)restartTransmission {
     // alternative solution
     // system("/usr/bin/killall Transmission 2>/dev/null");
@@ -216,9 +196,8 @@ static void *kAppTerminatedContext = &kAppTerminatedContext;
     for (NSRunningApplication* app in _transmissionInstances) {
         [app addObserver:self forKeyPath:kAppTerminatedKeyPath options:NSKeyValueObservingOptionNew context:kAppTerminatedContext];
         
-        if (![app terminate]) {
-            [app forceTerminate];
-        }
+        // if plain -terminate was used, Transmission would present an "are you sure" dialog that would prevent the app from quitting
+        [app forceTerminate];
     }
     return YES;
 }

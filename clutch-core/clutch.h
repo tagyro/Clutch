@@ -47,7 +47,8 @@
 
 @interface Clutch : NSObject
 
-- (NSUserDefaults *)clutchGroupDefaults;
+@property (nonatomic, strong) NSUserDefaults* clutchGroupDefaults;
+
 - (ClutchInterface *)getBindInterface;
 - (NSArray *)getInterfaces;
 - (BOOL)unbindFromInterface;

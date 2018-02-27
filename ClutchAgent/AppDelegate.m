@@ -57,11 +57,6 @@
 }
 
 - (IBAction)openClutch:(id)sender {
-#warning need to use SMLoginItemSetEnabled to integrate with login items
-    
-    NSLog(@"open clutch");
-    // [[NSWorkspace sharedWorkspace]launchApplication:@"Clutch"];
-    
     NSArray *pathComponents = [[[NSBundle mainBundle]bundlePath]pathComponents];
     NSString *path = [NSString pathWithComponents:[pathComponents subarrayWithRange:NSMakeRange(0, pathComponents.count - 4)]];
     [[NSWorkspace sharedWorkspace]launchApplication:path];
